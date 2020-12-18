@@ -1,0 +1,33 @@
+<div class="card text-center padding margin-top text-white bg-info mb-3" ,class="small-container center-block"><br /><br />
+<div class="small-container center-block"><h2>Registro</h2><div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field", class="small-container center-block">
+    <div class="small-container center-block"><%= f.label :email %><div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field", class="small-container center-block">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field", class="small-container center-block">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br />
+  </div>
+
+  <div class="actions", class="small-container center-block">
+    <%= f.button "Sign up", class:"btn btn-warning" %><br /><br /><br />
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="small-container center-block"><%= render "devise/shared/links"%></div>

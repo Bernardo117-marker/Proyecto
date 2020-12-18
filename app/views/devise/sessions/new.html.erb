@@ -1,0 +1,32 @@
+<!-- Estilizamos el formulario -->
+<div class="card text-center padding margin-top text-white bg-info mb-3" ,class="small-container center-block"><br /><br />
+ <div class="small-container center-block"><h2>Iniciar Sesión</h2></div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field", class="small-container center-block">
+      <!-- Agregar label en español -->
+      <div class="small-container center-block"><%= f.label :email, "Correo electrónico" %><br /></div>
+      <div class="small-container center-block"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+    </div>
+
+    <div class="field", class="small-container center-block">
+      <!-- Agregar label en español -->
+      <div class="small-container center-block"><%= f.label :password, "Contraseña" %><br /></div>
+      <div class="small-container center-block"><%= f.password_field :password, autocomplete: "current-password" %></div>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field", class="small-container center-block">
+        <div class="small-container center-block"><%= f.check_box :remember_me %></div>
+        <div class="small-container center-block"><%= f.label :remember_me, "Recordar sesión" %></div>
+      </div>
+    <% end %>
+
+    <div class="actions", class="small-container center-block">
+      <!-- Estilizamos el boton -->
+      <div class="small-container center-block"><%= f.submit "Iniciar sesión", class:"btn btn-warning" %></div><br /><br /><br />
+    </div>
+  <% end %>
+</div>
+  <!-- Agregar label en español -->
+  <div class="small-container center-block"><%= render "devise/shared/links" %></div>
